@@ -1,0 +1,110 @@
+.painel {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: top;
+    background-color: white;
+    height: 95%;
+    width: 95%;
+    border: 1px solid rgb(36, 39, 47);
+}
+
+.info_nomeJogador {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 110px;
+    height: 20%;
+    font-size: 80px;
+
+}
+
+.info_taxaVitoriaJogador {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    width: 70%;
+    height: 40%;
+    font-size: 80px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.info_form {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    margin-top: 40px;
+    height: 30%;
+    width: 70%;
+    overflow: hidden;
+    border-radius: 10px 10px 10px 10px;
+    border: 1px solid black;
+}
+
+.info_form:hover {
+    cursor: pointer;
+}
+
+.info_form_up {
+    display: flex;
+    width: 100%;
+    height: 50%;
+}
+
+.info_vitoria {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(151, 241, 226);
+    width: 50%;
+    height: 100%;
+    font-size: 50px;
+    border: 4px solid transparent
+}
+
+.info_derrota {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(245, 104, 104);
+    width: 50%;
+    height: 100%;
+    font-size: 50px;
+    border: 4px solid transparent
+}
+
+.info_derrota:hover {
+
+    border-color: rgb(244, 49, 49);
+
+}
+
+.info_vitoria:hover {
+
+    border-color: rgb(95, 193, 176);
+
+}
+
+
+.info_form_down {
+    width: 100%;
+    height: 50%;
+}
+
+.info_enviar:hover {
+    cursor: pointer;
+}
+
+.info_enviar {
+    width: 100%;
+    height: 100%;
+    font-size: 30px;
+    border-radius: 0px 0px 10px 10px;
+}

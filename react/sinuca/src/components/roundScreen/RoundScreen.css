@@ -1,0 +1,29 @@
+.roundScreen {
+    display: grid;
+    grid-template-columns: 500px 1fr;
+    height: 100%;
+    width: 100%;
+
+}
+
+.roundScreen_tabela {
+    grid-column: 2;
+    grid-row: 1;
+    height: 100%;
+    width: 100%;
+    min-width: 500px;
+    display: flex;
+    justify-content: right;
+    padding-right: 25px;
+    box-sizing: border-box;
+}
+
+.roundScreen_form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 25%;
+    width: 500px;
+    height: 500px;
+}

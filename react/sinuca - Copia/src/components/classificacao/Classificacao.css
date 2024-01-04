@@ -1,0 +1,167 @@
+.classificacao {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    overflow-y: auto;
+    overflow-x: hidden;
+    gap: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+    -ms-overflow-style: none;
+}
+
+.classificacao::-webkit-scrollbar {
+    width: 8px;
+}
+
+.classificacao::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+.classificacao_cabecalho {
+    display: flex;
+    width: 98%;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.classificacao_cabecalho_nome {
+    margin-left: calc(10% + 16px);
+    width: 60%;
+    height: 60px;
+    background-color: rgb(255, 255, 255);
+    border: 10px solid rgb(255, 255, 255);
+    font-size: 30px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.classificacao_cabecalho_valor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+    height: 60px;
+    background-color: rgb(151, 241, 226);
+    border: 10px solid transparent;
+    font-size: 30px;
+}
+
+.classificacao_cabecalho_valor:last-child {
+    background-color: rgb(245, 104, 104);
+    border: 10px solid transparent;
+}
+
+.classificacao_cabecalho_valor:nth-last-child(3) {
+    border-radius: 20px 0px 0px 0px;
+    background-color: rgb(241, 239, 151);
+}
+
+
+.classificacao_linha {
+    display: flex;
+    width: 100%;
+    height: 60px;
+    margin: 10px;
+    gap: 5px;
+}
+
+.classificacao_linha * {
+    font-size: 25px;
+    background-color: white;
+    border: 10px solid transparent;
+}
+
+.classificacao_linha label {
+    background-color: inherit;
+}
+
+.classificacao_linha:hover .classificacao_colunaNome,
+.classificacao_linha:hover .classificacao_colunaValor {
+    border-color: rgb(77, 77, 77);
+    font-size: 30px;
+    transition: border 0.5s ease-in-out, border-radius 0.7s ease-in-out, background-color 0.5s ease-in-out, font-size 0.5s ease-in-out, border-color 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.classificacao_linha:hover .classificacao_colunaValor:last-child {
+    border-color: rgb(77, 77, 77);
+    background-color: rgb(247, 173, 173);
+    transition: border-color 0.3s ease-in-out;
+}
+
+.classificacao_linha:hover .classificacao_colunaValor:nth-last-child(2) {
+    border-color: rgb(77, 77, 77);
+    background-color: rgb(151, 241, 226);
+    transition: border-color 0.3s ease-in-out;
+}
+
+.classificacao_linha:hover .classificacao_colunaValor:nth-last-child(3) {
+    border-color: rgb(77, 77, 77);
+    transition: border-color 0.3s ease-in-out;
+}
+
+.classificacao_linha:hover .classificacao_posicao {
+    border-color: rgb(77, 77, 77);
+    background-color: white;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.classificacao_colunaValor:last-child {
+    border-radius: 0px 0px 40px 0px;
+    background-color: rgb(247, 173, 173);
+}
+
+.classificacao_colunaValor:nth-last-child(2) {
+    border-radius: 20px 0px 0px 0px;
+    background-color: rgb(151, 241, 226);
+}
+
+.classificacao_colunaValor:nth-last-child(3) {
+    border-radius: 20px 0px 0px 0px;
+    background-color: rgb(241, 239, 151);
+}
+
+.classificacao_posicao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    height: 60px;
+    margin: 0px 0px 0px 10px;
+    transition: border 0.5s ease-in-out, border-radius 0.7s ease-in-out, background-color 0.5s ease-in-out, font-size 0.5s ease-in-out, border-color 0.5s ease-in-out;
+}
+
+.classificacao_colunaNome {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 60%;
+    height: 60px;
+    border-color: white;
+    position: relative;
+    /* Adicione position: relative; para tornar o position: absolute; relativo a este elemento */
+    transition: border 0.5s ease-in-out, border-radius 0.7s ease-in-out, background-color 0.5s ease-in-out, font-size 0.5s ease-in-out, border-color 0.5s ease-in-out;
+}
+
+.classificacao_colunaNome div {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* Ajuste para posicionar no canto esquerdo */
+    align-items: center;
+    /* Ajuste conforme necessário */
+}
+
+.classificacao_colunaValor {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+    height: 80px;
+    transition: border 0.5s ease-in-out, border-radius 0.7s ease-in-out, background-color 0.5s ease-in-out, font-size 0.5s ease-in-out, border-color 0.5s ease-in-out;
+}
