@@ -21,9 +21,9 @@
         $dados = json_decode(file_get_contents("php://input"), true);
         $resultado = Usuario::verificaUsuario($dados['login'], $dados['senha']);
 
-        if ($resultado == true) {
+        if ($resultado == 'logado') {
             $issuedAt = time();
-            $expirationTime = $issuedAt + 3600;  // jwt válido por 1 hora
+            $expirationTime = $issuedAt + 30;  // jwt válido por 1 hora
             $payload = array(
                 'usuario' => $dados['login'],
                 'iat' => $issuedAt,

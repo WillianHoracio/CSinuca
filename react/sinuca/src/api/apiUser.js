@@ -7,10 +7,18 @@ export async function loginUsuario(login, senha) {
             login: login,
             senha: senha
         });
-        console.log(response.data);
-       
-        
-        return response.data;
+        if (response.data && response.data.token) {
+            const token = response.data.token;
+            // Verificação básica do formato do JWT
+            if (token.split('.').length === 3) {
+                return token
+            } else {
+               return false
+            }
+        } else {
+            return false
+        }
+
     } catch (error) {
         
         console.error('Erro ao logar:', error);

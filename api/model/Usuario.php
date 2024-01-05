@@ -32,13 +32,13 @@ class Usuario {
                 $senhaUsuario = $result[0]['senhaUsuario'];
 
                 if (password_verify($senha, $senhaUsuario)) {
-                    return true;
+                    return 'logado';
                 } else {
-                    return false;
+                    return 'Senha incorreta';
                 }
             } else {
-                // Nenhum usuário encontrado com esse login.
-                return "Usuário não encontrado";
+                
+                return 'Usuario não encontrado';
             }
     
         } catch (PDOException $e) {
