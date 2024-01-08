@@ -28,7 +28,7 @@ class Usuario {
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             if (!empty($result)) {
-                // Como você espera apenas um registro, você pode diretamente acessar o primeiro elemento.
+                
                 $senhaUsuario = $result[0]['senhaUsuario'];
 
                 if (password_verify($senha, $senhaUsuario)) {

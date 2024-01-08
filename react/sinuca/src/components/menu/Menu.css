@@ -1,7 +1,8 @@
 .menuBar {
     width: 100%;
     height: 70px;
-    background-color: white;
+    background: rgb(237, 129, 129);
+    background: linear-gradient(90deg, rgba(237, 129, 129, 1) 0%, rgba(255, 197, 120, 0.9500175070028011) 48%, rgba(255, 253, 185, 1) 100%);
     display: flex;
     flex-direction: row;
     position: absolute;
@@ -14,6 +15,7 @@
     justify-content: center;
     width: 200px;
     font-size: 20px;
+    font-weight: 400;
     text-transform: uppercase;
     height: 99%;
 }

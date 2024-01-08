@@ -3,7 +3,7 @@ const url = 'http://localhost:8080/api/';
 
 export async function loginUsuario(login, senha) {
     try {
-        const response = await axios.post(url + 'usuario', {
+        const response = await axios.post(url + 'autenticacao', {
             login: login,
             senha: senha
         });

@@ -41,9 +41,7 @@ const Menu = ({ changeMenu }) => {
                 
             ) : (
                 <>
-                    <div className='menuBar_item' onClick={clickMenuItem('classificacao')}>
-                        <label>Classificação</label>
-                    </div>
+                   
                     <div className='menuBar_item' onClick={clickMenuItem('login')}>
                         <label>Login</label>
                         <CiUser size={40}/>

@@ -1,11 +1,11 @@
-import React, { useState, useEffect, createContext, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import EditScreen from './components/editScreen/EditScreen.js'
 import RoundScreen from './components/roundScreen/RoundScreen.js'
 import Classificacao from './components/classificacao/Classificacao.js';
 import LoginScreen from './components/loginScreen/LoginScreen.js'
 import CadForm from './components/cadForm/CadForm.js'
 import Menu from './components/menu/Menu.js'
-import { AuthProvider } from './AuthContext';
+import { AuthProvider, AuthContext } from './AuthContext'
 
 
 
@@ -13,9 +13,19 @@ import './App.css';
 
 function App() {
 
- 
+  const { isLoggedIn } = useContext(AuthContext)
+  
 
-  const [menuSelected, setMenuSelected] = useState('classificacao')
+  const [menuSelected, setMenuSelected] = useState('login')
+
+  useEffect(() => {
+    if (isLoggedIn === false) {
+      setMenuSelected('login')  
+    } else {
+      setMenuSelected('classificacao')
+    }
+    
+  },[isLoggedIn])
 
   const changeMenu = (newItem) => {
     setMenuSelected(newItem)
@@ -23,7 +33,7 @@ function App() {
 
   return (
     <div className="App">
-      <AuthProvider>
+      
         <section className='menu'>
           <Menu changeMenu={changeMenu} />
         </section>
@@ -35,9 +45,7 @@ function App() {
           {menuSelected === 'novo jogador' ? <CadForm/> : null}
           {menuSelected === 'login' ? <LoginScreen/> : null}
         </section>
-      </AuthProvider>
-      
-      
+     
         
     </div>
   );

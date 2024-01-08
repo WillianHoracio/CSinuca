@@ -23,14 +23,14 @@
 
         if ($resultado == 'logado') {
             $issuedAt = time();
-            $expirationTime = $issuedAt + 30; 
+            $expirationTime = $issuedAt + 3600; 
             $payload = array(
                 'usuario' => $dados['login'],
                 'iat' => $issuedAt,
                 'exp' => $expirationTime
             );
 
-            $jwt = JWT::encode($payload, 'SuaChaveSecreta', 'HS256');
+            $jwt = JWT::encode($payload, 'chave', 'HS256');
             echo json_encode(['token' => $jwt]);
         } else {
             echo json_encode(false);
