@@ -23,7 +23,7 @@
 
         if ($resultado == 'logado') {
             $issuedAt = time();
-            $expirationTime = $issuedAt + 30;  // jwt válido por 1 hora
+            $expirationTime = $issuedAt + 30; 
             $payload = array(
                 'usuario' => $dados['login'],
                 'iat' => $issuedAt,

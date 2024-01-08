@@ -9,7 +9,7 @@ export async function loginUsuario(login, senha) {
         });
         if (response.data && response.data.token) {
             const token = response.data.token;
-            // Verificação básica do formato do JWT
+            
             if (token.split('.').length === 3) {
                 return token
             } else {

@@ -18,12 +18,12 @@ const CadForm = () => {
 
     return (
         <div className="cadForm">
-            <form onSubmit={formSubmit}> {/* Corrigido para passar apenas a referência da função */}
+            <form onSubmit={formSubmit}> 
                 <div className='cadForm_title'>
                     <label>Novo Jogador</label>
                 </div>
                 <input type="text" placeholder="Nome" onChange={onTextChange} value={cadastro}/>
-                <button type="submit">Cadastrar</button> {/* Adicionei type="submit" aqui */}
+                <button type="submit">Cadastrar</button> 
             </form>
         </div>
     );
