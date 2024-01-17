@@ -2,16 +2,32 @@
 
 require_once './vendor/autoload.php'; // Importa o autoloader do Composer
 use \Firebase\JWT\JWT; // Importa a classe JWT
+use Firebase\JWT\Key;
 
 
     // TRATAMENTO CORS
     header("Access-Control-Allow-Origin: *");
     header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
-    header("Access-Control-Allow-Headers: *, AUTHORIZATION");
+    header("Access-Control-Allow-Headers: *, Authorization");
+    header("Access-Control-Allow-Credentials: true");
 
-   
+    
 
 
+    
+    $authHeader = $_SERVER['HTTP_AUTHORIZATION'];
+    list($token) = sscanf($authHeader, 'Bearer %s');
+    
+    $chaveToken = 'chave';
+
+    try {
+        $decoded = JWT::decode($token, new Key($chaveToken, 'HS256'));
+        // Restante do seu código aqui...
+    } catch (Exception $e) {
+        http_response_code(401);
+        echo json_encode(['error' => 'Token inválido: ' . $e->getMessage()]);
+        exit();
+    }
     
     
     if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
@@ -42,31 +58,4 @@ use \Firebase\JWT\JWT; // Importa a classe JWT
             echo json_encode(['error' => 'Rota não encontrada']);
             break;
     }
-    /* }
-
-    $authHeader = $_SERVER['HTTP_AUTHORIZATION'] ?? '';
-    
-error_log("Auth Header: " . $authHeader); // Adicione esta linha para depuração
-
-    list($jwt) = sscanf($authHeader, 'Bearer %s');
-
-    if (!$jwt) {
-        // Token não fornecido
-        http_response_code(401);
-        echo json_encode(['error' => 'Token não fornecido']);
-        exit();
-    }
-
-    try {
-        // Decodifica o token
-        $decoded = JWT::decode($jwt, 'chave', array('HS256'));
-    
-        // Token válido - continue com a execução
-    } catch (Exception $e) {
-        // Token inválido
-        http_response_code(401);
-        echo json_encode(['error' => 'Token inválido']);
-        exit();
-    }
-*/
 ?>

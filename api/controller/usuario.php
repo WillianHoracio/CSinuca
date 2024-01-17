@@ -23,7 +23,7 @@
 
         if ($resultado == 'logado') {
             $issuedAt = time();
-            $expirationTime = $issuedAt + 3600; 
+            $expirationTime = $issuedAt + 1200; 
             $payload = array(
                 'usuario' => $dados['login'],
                 'iat' => $issuedAt,

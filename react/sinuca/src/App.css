@@ -1,7 +1,7 @@
 .App {
   display: grid;
   grid-template-columns: 100vw;
-  grid-template-rows: 100px calc(100vh - 100px);
+  grid-template-rows: 70px calc(100vh - 70px);
   box-sizing: border-box;
 }
 
@@ -9,16 +9,18 @@
   position: fixed;
   grid-row: 1;
   width: 100%;
-  height: 100px;
+  height: 70px;
 }
 
 .corpo {
   grid-row: 2;
   width: 100%;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 70px);
   box-sizing: border-box;
   overflow-x: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #e1ebec;
+  padding: 15px;
 }

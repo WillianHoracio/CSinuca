@@ -5,6 +5,7 @@
     align-items: center;
     width: 95%;
     height: 100%;
+    background-color: transparent;
 
 }
 
@@ -12,14 +13,26 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: white;
+
     width: 95%;
     height: 200px;
     font-size: 30px;
-    box-shadow: 10px 15px 20px 10px rgba(155, 137, 72, 0.3);
-    font-weight: 100;
+    box-shadow: rgba(155, 137, 72, 0.3);
     text-transform: uppercase;
-    border: 1px solid rgb(169, 162, 162)
+    border-radius: 10px;
+}
+
+.partida_jogador div {
+    width: 94%;
+    height: 90%;
+    background: rgba(77, 83, 89, 1);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 50px;
+    color: white;
 }
 
 .partida_controle,
@@ -28,7 +41,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 200px;
+    height: 100px;
     width: 100%;
     font-size: 50px;
     margin: 15px;
@@ -48,8 +61,7 @@
 }
 
 .partida_fight {
-    background: rgb(2, 0, 36);
-    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(121, 9, 9, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    background: #4D5359;
     color: white;
     text-transform: uppercase;
     font-weight: 1000;
@@ -62,8 +74,7 @@
 }
 
 .partida_start {
-    background: rgb(237, 129, 129);
-    background: linear-gradient(90deg, rgba(237, 129, 129, 1) 0%, rgba(255, 197, 120, 0.9500175070028011) 48%, rgba(255, 253, 185, 1) 100%);
+    background: #4D5359;
     height: 100%;
     width: 100%;
     border: none;
@@ -75,4 +86,5 @@
 
 .partida_start:hover {
     cursor: pointer;
+    background-color: #636a71;
 }

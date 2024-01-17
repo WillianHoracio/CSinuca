@@ -24,6 +24,7 @@ const Partida = ({ jogadorSelecionado }) => {
 
     const iniciarNovoJogo = () => {
         setNewGame(true);
+        console.log('hue')
     };
 
 
@@ -33,16 +34,20 @@ const Partida = ({ jogadorSelecionado }) => {
             {newGame ? (
                 <form className='partida'>
                     <div className='partida_jogador'>
-                        {p1.NOME}
+                        <div>
+                            {p1.NOME}
+                        </div> 
                     </div>
                     <div className='partida_controle'>
                     
                         {Object.keys(p2).length === 0 ? <div className='partida_x'>X</div> :
-                            <div className='partida_fight'>Fight</div>}
+                            <div className='partida_fight'>Iniciar</div>}
                         
                     </div>
                     <div className='partida_jogador'>
-                        {p2.NOME}
+                        <div>
+                            {p2.NOME}
+                        </div>
                     </div>
                     
                 </form>

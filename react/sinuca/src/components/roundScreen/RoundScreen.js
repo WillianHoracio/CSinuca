@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Classificacao from '../classificacao/Classificacao.js';
 import Partida from '../partida/Partida.js';
+import Jogo from '../jogo/Jogo.js'
 import { buscaJogador, editaJogador, excluiJogador } from '../../api/apiJogador.js';
 import './RoundScreen.css';
 
@@ -9,6 +10,7 @@ function RoundScreen() {
   const [jogadorSelecionado, setJogadorSelecionado] = useState({});
   const [atualizaListaStatus, setAtualizaListaStatus] = useState(false);
   const [carregandoDados, setCarregandoDados] = useState(true);
+  const [jogando, setJogando] = useState(false)
 
   const atualizaListaJogadores = async () => {
     setCarregandoDados(true);
@@ -51,6 +53,14 @@ function RoundScreen() {
     setJogadorSelecionado(jogador);
   }
 
+  const ativarPartida = () => {
+    if(jogando) {
+      setJogando(false)
+    } else {
+      setJogando(true)
+    }
+  }
+
   return (
     <div className="roundScreen">
       <section className="roundScreen_tabela">
@@ -67,6 +77,8 @@ function RoundScreen() {
         
         {carregandoDados && <div>Carregando dados...</div>}
       </section>
+
+     
     </div>
   );
 }
